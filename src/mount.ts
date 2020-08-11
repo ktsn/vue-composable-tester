@@ -21,7 +21,7 @@ function mountV2<R>(
   composable: () => R,
   options: MountOptions
 ): MountResult<R> {
-  const Vue = require('vue').default
+  const Vue = require('vue') || require('vue').default
   const app = new Vue({
     setup() {
       options.provider?.()
