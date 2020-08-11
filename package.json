@@ -1,0 +1,45 @@
+{
+  "name": "vue-composable-tester",
+  "version": "0.0.0",
+  "author": "katashin",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "homepage": "https://github.com/ktsn/vue-composable-tester",
+  "bugs": "https://github.com/ktsn/vue-composable-tester/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ktsn/vue-composable-tester.git"
+  },
+  "scripts": {
+    "prepublishOnly": "npm run clean && npm run test && npm run build",
+    "clean": "rm -rf lib",
+    "build": "tsc -p src",
+    "dev": "jest --watch",
+    "lint": "eslint --ext js,ts src test",
+    "lint:fix": "eslint --fix --ext js,ts src test",
+    "test": "npm run lint && npm run test:unit",
+    "pretest:mount": "cd test/v2 && yarn && cd ../v3 && yarn",
+    "": "",
+    "test:unit": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.3",
+    "eslint": "^7.3.1",
+    "eslint-config-ktsn-typescript": "^2.2.0",
+    "jest": "^26.1.0",
+    "prettier": "2.0.5",
+    "prettier-config-ktsn": "^1.0.0",
+    "ts-jest": "^26.1.1",
+    "typescript": "^3.9.5",
+    "vue": "^3.0.0-rc.5"
+  },
+  "dependencies": {
+    "vue-demi": "^0.2.0"
+  }
+}
