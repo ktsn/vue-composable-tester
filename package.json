@@ -2,8 +2,14 @@
   "name": "vue-composable-tester",
   "version": "0.0.0",
   "author": "katashin",
-  "description": "",
-  "keywords": [],
+  "description": "Utility to test composition api functions for Vue.js",
+  "keywords": [
+    "Vue",
+    "Vue.js",
+    "composition api",
+    "composable",
+    "testing"
+  ],
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -24,8 +30,6 @@
     "lint": "eslint --ext js,ts src test",
     "lint:fix": "eslint --fix --ext js,ts src test",
     "test": "npm run lint && npm run test:unit",
-    "pretest:mount": "cd test/v2 && yarn && cd ../v3 && yarn",
-    "": "",
     "test:unit": "jest"
   },
   "devDependencies": {
@@ -38,8 +42,5 @@
     "ts-jest": "^26.1.1",
     "typescript": "^3.9.5",
     "vue": "^3.0.0-rc.5"
-  },
-  "dependencies": {
-    "vue-demi": "^0.2.0"
   }
 }
