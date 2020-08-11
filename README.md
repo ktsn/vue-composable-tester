@@ -58,7 +58,7 @@ Since `mount` helper actually mounts a component under the hood, `onMount` and r
 import { mount } from 'vue-composable-tester'
 import { onMounted, nextTick } from 'vue'
 
-function useCounter(fetchCount: () => Promise<number>) {
+function useCounter(fetchCount) {
   const count = ref(0)
 
   onMounted(() => {
