@@ -30,6 +30,8 @@ function mountV2<R>(
       const wrapper = () => result
       return { wrapper }
     },
+
+    render() {},
   })
 
   app.$mount()
