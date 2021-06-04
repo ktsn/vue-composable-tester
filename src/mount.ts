@@ -47,11 +47,21 @@ function mountV3<R>(
   composable: () => R,
   options: MountOptions
 ): MountResult<R> {
-  const { createApp } = require('vue')
+  const { createApp, h } = require('vue')
   const App = {
     setup() {
       options.provider?.()
+    },
 
+    render() {
+      return h(Child, {
+        ref: 'child',
+      })
+    },
+  }
+
+  const Child = {
+    setup() {
       const result = composable()
       const wrapper = () => result
       return { wrapper }
@@ -59,12 +69,13 @@ function mountV3<R>(
 
     render() {},
   }
+
   const root = document.createElement('div')
   const app = createApp(App)
   const vm = app.mount(root)
 
   return {
-    result: vm.wrapper(),
+    result: vm.$refs.child.wrapper(),
 
     unmount: () => app.unmount(),
   }
